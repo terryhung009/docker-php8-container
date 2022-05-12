@@ -1,0 +1,2 @@
+2022/05/05 08:05:01 [error] 23#23: *5 client intended to send too large body: 2929377 bytes, client: 172.24.0.1, server: , request: "POST /index.php?route=/import HTTP/1.1", host: "localhost:81"
+2022/05/05 08:05:23 [error] 22#22: *3 client intended to send too large body: 2930237 bytes, client: 172.24.0.1, server: , request: "POST /index.php?route=/import HTTP/1.1", host: "localhost:81"
