@@ -5,13 +5,17 @@ services:
         image: nginx:latest
         container_name: nginx
         ports:
-            - "81:81" # phpmyadmin
+            # - "81:81" # phpmyadmin
+            - "82:82" # phpmyadmin
             - "2021:2021" # domain_tool_admin
+            - "2022:2022" # domain_tool_admin
         volumes:
             # - ../work:/work
+            - C:/work/:/work
             - C:/xampp/htdocs/:/htdocs
             # - C:/xampp/htdocs/jonwai/staging:/var/www/html
             - C:/xampp/htdocs/newjonwai/:/var/www/html
+            - C:/work/jonwai_laravel9:/var/www/html2
             - C:/xampp/phpMyAdmin:/phpmyadmin
             - ./nginx/conf.d:/etc/nginx/conf.d
             - ./nginx/logs:/var/log/nginx
@@ -22,9 +26,11 @@ services:
         container_name: php8-fpm
         volumes:
             # - ../work:/work
+            - C:/work/:/work
             - C:/xampp/htdocs/:/htdocs
             # - C:/xampp/htdocs/jonwai/staging:/var/www/html
             - C:/xampp/htdocs/newjonwai/:/var/www/html
+            - C:/work/jonwai_laravel9:/var/www/html2
             - C:/xampp/phpMyAdmin:/phpmyadmin
     # grafana:
     #     image: grafana/grafana-oss:7.5.10-ubuntu
